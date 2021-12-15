@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="{% static 'homepage/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/style_main.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/fonts/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="grid">
+                <nav class="header__navbar ">
+                    <div class="header__navbar-logo">
+                        <a href="#">
+                        <img src="{% static 'homepage/img/logo.png' %}" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="header__navbar-list">
+                      
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class=" header__navbar-icon far fa-question-circle"></i>
+                                TRỢ GIÚP
+                            </a>
+                        </li>
+
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fas fa-info-circle"></i>
+                                LIÊN HỆ
+                            </a>
+                        </li>
+                        
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate js-btn__open--register">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong js-btn__open--login">Đăng nhập</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+
+        </div>
+        
+        <footer class="footer">
+
+        </footer>
+        <div class=" modal  js-modal__register">
+            <div class="modal-container__account js-modal-container__register js-modal-container">
+                <header class="modal-header">
+                    Đăng ký tài khoản
+                    <i class="fas fa-times js-btn__close icon_close"></i>
+                </header>
+                <!-- body -->
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <!-- Subjects -->
+                        <div class="modal-info">
+                            <div class="modal-info__name">
+                                <label class="modal-label" for="">Tên:</label>
+                                <input type="text" class="modal-input" required placeholder="Họ và tên">
+                            </div>
+        
+                            <div class="modal-info__email">
+                                <label class="modal-label" for="">Email:</label>
+                                <input type="text" class="modal-input" required placeholder="Email (.edu.vn)">
+                            </div>
+                        </div>
+                        
+                        <div class="modal-pass">
+                            <div class="modal-pass__import">
+                                <label class="modal-label" for="">Mật khẩu</label>
+                                <input type="text" class="modal-input" required placeholder="Mật khẩu">
+                            </div>
+        
+                            <div class="modal-pass__re-import">
+                                <label class="modal-label" for="">Nhập lại mật khẩu</label>
+                                <input type="text" class="modal-input" required placeholder="Nhập lại mật khẩu">
+                            </div>
+                        </div>
+                        <div class="modal-btn">
+                            <button class="modal-btn__regis js-btn__close"> Đăng ký </button>
+                            <span style="margin-top: 8px;" class=""><hr>Bạn đã có tài khoản ?</span>
+                            <span class="login js-btn__open--login">Đăng nhập</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class=" modal js-modal__login">
+            <div class="modal-container__account js-modal-container__login js-modal-container">
+                <header class="modal-header ">
+                    Đăng nhập
+                    <i class="fas fa-times js-btn__close icon_close"></i>
+                </header>
+                <!-- body -->
+                <form method="POST" action="">
+                    <div class="modal-body">
+                        <!-- Subjects -->
+                        <div class="modal-login__info">
+                            <div class="modal-login__info--name">
+                                <label class="modal-label" for="">Email</label>
+                                <input type="text" class="modal-input" required placeholder="Nhập email">
+                            </div>
+    
+                            <div class="modal-login__info--pass">
+                                <label class="modal-label" for="">Mật khẩu</label>
+                                <input type="text" class="modal-input" required placeholder="Nhập mật khẩu">
+                                <p class="help" style="padding-top: 12px">Quên mật khẩu ?</p>   
+                            </div>
+                        </div>
+                        <div class="modal-btn">
+                            <button class="modal-btn__regis js-btn__close"> Đăng nhập </button>
+                            <span style="margin-top: 8px;" class=""><hr>Bạn chưa có tài khoản ?</span>
+                            <span class="register js-btn__open--register">Đăng ký</span>
+    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'homepage/js/signup_login.js' %}"> </script>
+
+</body>
+</html>

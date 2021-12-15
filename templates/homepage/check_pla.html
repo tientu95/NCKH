@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trang chủ | Kiểm tra</title>
+    <link rel="stylesheet" href="{% static 'homepage/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css/style_main.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/fonts/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'homepage/css/styles_table.css' %}">
+        <script src="{% static 'homepage/js/datatables-simple-demo.js' %}"></script>
+        <script src="{% static 'homepage/js/simple-datatable@latest.js' %}"> </script>
+        <link rel="stylesheet" href="{% static 'homepage/fonts/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div class="grid">
+                <nav class="header__navbar ">
+                    <div class="header__navbar-logo">
+                        <a href="{% url 'index' %}">
+                        <img src="{% static 'homepage/img/logo.png' %}" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class=" header__navbar-icon far fa-question-circle"></i>
+                                TRỢ GIÚP
+                            </a>
+                        </li>
+
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fas fa-info-circle"></i>
+                                LIÊN HỆ
+                            </a>
+                        </li>
+
+                        <li class="header__navbar-item ">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fas fa-check"></i>
+                                KIỂM TRA
+                            </a>
+
+                        </li>
+
+                        <li class="header__navbar-item header__navbar-item--strong">
+                            <i class="header__navbar-icon fas fa-id-badge"></i>
+                            HỒ SƠ
+                            <div class="header__profile">
+                                <p>Nguyễn Văn A</p>
+                                <p>Cập nhật thông tin</p>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container">
+                <main>
+                    <div class="container__statis">
+                        <!-- <input name="fileUpload" type="file" title = "Chọn tệp để tải lên"/> -->
+                        <input class="creat-file__button js-btn__open" type="submit" value="Tải lên">
+                        <form method="get" action="newPDF.rar">
+                            <div class="card-body">
+<!--                             <button class="dowload-button"type="submit">-->
+<!--                                            Tải xuống-->
+<!--                                    </button>-->
+                                    <table id="datatablesSimple">
+                                            <thead>
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th>Tên</th>
+                                                    <th>Đạo văn (%)</th>
+                                                    <th>Ngày tải lên</th>
+                                                    <th>Thao tác</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th>Tên</th>
+                                                    <th>Đạo văn (%)</th>
+                                                    <th>Ngày tải lên</th>
+                                                    <th>Thao tác</th>
+
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <footer class="footer">
+        </footer>
+
+    </div>
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <header class="modal-header">
+                Chọn tài liệu
+            </header>
+            <p class="modal-help">Need <a href="">help?</a></p>
+            <!-- body -->
+            <form method="POST" action="Upload.php" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <!-- Subjects -->
+                    <div class="modal-subjects">
+                        <div class="modal-subjects__code">
+                            <lable class="modal-label"> Mã học phần </lable>
+                            <select class="modal-input modal-input_cbo" name="" id="">
+                                <option value="0">- Chọn ngành -</option>
+                                <option value="">PLT07A</option>
+                                <option value="">PLT09A</option>
+                                <option value="">MIS02A</option>
+                            </select>
+                        </div>
+                        <div class="modal-subjects__name">
+                            <lable class="modal-label">     Nhóm lớp    </lable>
+                            <input type="text" class="modal-input" placeholder="Nhóm lớp">
+                        </div>
+                    </div>
+
+                   <div class="modal-time">
+                       <div class="modal-time__years">
+                            <lable class="modal-label"> Năm học  </lable>
+                            <select class="modal-input modal-input_cbo" name="" id="">
+                                <option value="0">- Chọn năm -</option>
+                                <option value="">2019-2020</option>
+                                <option value="">2020-2021</option>
+                                <option value="">2021-2022</option>
+                            </select>
+                       </div>
+                       <div class="modal-time__semester">
+                            <lable class="modal-label"> Học kì   </lable>
+                            <select class="modal-input modal-input_cbo" name="" id="">
+                                <option value="0">- Học kỳ -</option>
+                                <option value="">Học kỳ 1</option>
+                                <option value="">Học kỳ 2</option>
+                            </select>
+                       </div>
+                   </div>
+                   <div class="modal-chose_file">
+                       <label class="modal-label">Chọn file tài liệu</label>
+                       <input name="fileUpload" type="file" class="modal-input_file" title="Chọn tài liệu" value="Chọn file">
+                   </div>
+                    <div class="modal-button">
+                            <div class="btn__close js-btn__close" >Hủy </div>
+                            <button class="btn__check js-btn__check"> Kiểm tra </button>
+                    </div>
+
+                </div>
+            </form>
+
+            <!-- footer -->
+            <footer class="modal-footer">
+            </footer>
+        </div>
+
+    </div>
+    <!-- <script>
+        const fileinput = document.querySelector("#fileInput");
+        fileinput.addEventListener("change",(even) => {
+            const {file} = event.target;
+            console.log("file",files);
+        }
+    </script> -->
+    <script src="{% static 'homepage/js/main.js' %}"> </script>
+
+</body>
+</html>
